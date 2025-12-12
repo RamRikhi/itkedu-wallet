@@ -1,4 +1,19 @@
 spring:
   application:
-    name: itkedu-wallet-app
-    datasource:
+    name: itkedu-wallet
+  datasource:
+    url: jdbc:postgresql://db:5432/postgres
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+
